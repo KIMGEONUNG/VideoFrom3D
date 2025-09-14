@@ -44,6 +44,21 @@
 - [ ] Release model checkpoint
 - [ ] Release training code
 
+
+<!-- ## ⌨️  Program -->
+<!--  -->
+<!-- ### Download checkpoint -->
+<!--  -->
+<!-- ### Environment -->
+<!--  -->
+<!-- ### Quick start -->
+<!--  -->
+<!-- ### Preprocessing -->
+<!--  -->
+<!-- ### SAG inference -->
+<!--  -->
+<!-- ### GGI inference -->
+
 ## ☕️ Acknowledgment
 
 - We borrowed the readme format from [Upscale-A-Video](https://github.com/sczhou/Upscale-A-Video) 
