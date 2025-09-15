@@ -2,7 +2,7 @@
 
 <h1>
     📽️ VideoFrom3D 📽️<br> 
-     <small>3D Scene Video Generation via Complementary Image and Video Diffusion Models</small>
+     <sub>3D Scene Video Generation via Complementary Image and Video Diffusion Models</sub>
 </h1>
 
 <div>
