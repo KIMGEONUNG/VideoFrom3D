@@ -2,7 +2,9 @@
 
 <h1>
     📽️ VideoFrom3D 📽️<br> 
-    3D Scene Video Generation via Complementary Image and Video Diffusion Models
+     <span style="font-size: 0.7em;">
+        3D Scene Video Generation via Complementary Image and Video Diffusion Models
+    </span>
 </h1>
 
 <div>
@@ -11,7 +13,7 @@
     <a href='https://www.scho.pe.kr/' target='_blank'>Sunghyun Cho</a>&emsp;
 </div>
 <div>
-    POSTECH
+    <a href='https://cg.postech.ac.kr/' target='_blank' style="color: inherit; text-decoration: none;">POSTECH CG Lab.</a>&emsp;
 </div>
 
 <div>
@@ -43,7 +45,6 @@
 - [ ] Release inference code
 - [ ] Release model checkpoint
 - [ ] Release training code
-🎞️
 
 <!-- ## ⌨️  Program -->
 <!--  -->
@@ -65,3 +66,16 @@
 - We borrowed the readme format from [Upscale-A-Video](https://github.com/sczhou/Upscale-A-Video) 
 - We finetune a pretrained video diffusion model, [CogVideoX](https://github.com/zai-org/CogVideo) 
 - We generate anchor views using [Flux ControlNet](https://huggingface.co/XLabs-AI/flux-controlnet-collections) 
+
+
+<!-- ## 📄 Citation -->
+<!--  -->
+<!-- ``` -->
+<!-- @inproceedings{Kim2022BigColor, -->
+<!--   title     = {BigColor: Colorization using a Generative Color Prior for Natural Images}, -->
+<!--   author    = {Geonung Kim,Kyoungkook Kang,Seongtae Kim,Hwayoon Lee,Sehoon Kim,Jonghyun Kim,Seung-Hwan Baek,Sunghyun Cho}, -->
+<!--   booktitle = {European Conference on Computer Vision (ECCV)}, -->
+<!--   year      = {2022} -->
+<!-- } -->
+<!--  -->
+<!-- ``` -->
