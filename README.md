@@ -2,9 +2,7 @@
 
 <h1>
     📽️ VideoFrom3D 📽️<br> 
-     <span style="font-size: 0.7em;">
-        3D Scene Video Generation via Complementary Image and Video Diffusion Models
-    </span>
+     <small>3D Scene Video Generation via Complementary Image and Video Diffusion Models</small>
 </h1>
 
 <div>
@@ -13,7 +11,7 @@
     <a href='https://www.scho.pe.kr/' target='_blank'>Sunghyun Cho</a>&emsp;
 </div>
 <div>
-    <a href='https://cg.postech.ac.kr/' target='_blank' style="color: inherit; text-decoration: none;">POSTECH CG Lab.</a>&emsp;
+    POSTECH CG Lab.
 </div>
 
 <div>
