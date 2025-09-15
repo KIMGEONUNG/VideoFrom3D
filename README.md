@@ -1,7 +1,7 @@
 <div align="center">
 
 <h1>
-    VideoFrom3D<br> 
+    📽️ VideoFrom3D 📽️<br> 
     3D Scene Video Generation via Complementary Image and Video Diffusion Models
 </h1>
 
@@ -43,7 +43,7 @@
 - [ ] Release inference code
 - [ ] Release model checkpoint
 - [ ] Release training code
-
+🎞️
 
 <!-- ## ⌨️  Program -->
 <!--  -->
@@ -54,6 +54,7 @@
 <!-- ### Quick start -->
 <!--  -->
 <!-- ### Preprocessing -->
+
 <!--  -->
 <!-- ### SAG inference -->
 <!--  -->
