@@ -20,7 +20,7 @@
 
 <div>
     <h4 align="center">
-        <!-- <a href="https://kimgeonung.github.io/id-compression/" target='_blank'> -->
+        <a href="https://kimgeonung.github.io/VideoFrom3D/" target='_blank'>
         <img src="https://img.shields.io/badge/🐳-Project%20Page-blue">
         </a>
         <!-- <a href="https://arxiv.org/abs/2401.17547" target='_blank'> -->
