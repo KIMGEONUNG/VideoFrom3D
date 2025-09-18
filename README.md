@@ -29,7 +29,7 @@
     </h4>
 </div>
 
-![teaser](assets/teaser.jpg) 
+![teaser](assets-readme/teaser.jpg) 
 ---
 
 </div>
@@ -44,20 +44,37 @@
 - [ ] Release model checkpoint
 - [ ] Release training code
 
-<!-- ## ⌨️  Program -->
-<!--  -->
-<!-- ### Download checkpoint -->
-<!--  -->
-<!-- ### Environment -->
-<!--  -->
-<!-- ### Quick start -->
-<!--  -->
-<!-- ### Preprocessing -->
+## ⌨️  Program
 
-<!--  -->
-<!-- ### SAG inference -->
-<!--  -->
-<!-- ### GGI inference -->
+### Download checkpoint
+
+### Environment
+
+### Quick start
+
+### Preprocessing
+
+
+### Sparse Appearance-guided Sampling (SAG)
+
+#### Distribution Alignment
+
+```sh
+# For a single style
+accelerate launch --num_processes 1 --main_process_port=4401 distribution_alignment.py \
+    --path_image assets/references/ \
+    --pfix single
+
+# For multiple styles for each identifier prompt
+accelerate launch --num_processes 1 --main_process_port=4401 distribution_alignment.py \
+    -- assets/references/style_01_38.png assets/references/style_00_100.png \
+    --prompt 'exterior' 'interior' \
+    --pfix multiple
+```
+
+
+
+### GGI inference
 
 ## ☕️ Acknowledgment
 
@@ -66,14 +83,15 @@
 - We generate anchor views using [Flux ControlNet](https://huggingface.co/XLabs-AI/flux-controlnet-collections) 
 
 
-<!-- ## 📄 Citation -->
-<!--  -->
-<!-- ``` -->
+## 📄 Citation
+
+```
+Comming Soon
 <!-- @inproceedings{Kim2022BigColor, -->
 <!--   title     = {BigColor: Colorization using a Generative Color Prior for Natural Images}, -->
 <!--   author    = {Geonung Kim,Kyoungkook Kang,Seongtae Kim,Hwayoon Lee,Sehoon Kim,Jonghyun Kim,Seung-Hwan Baek,Sunghyun Cho}, -->
 <!--   booktitle = {European Conference on Computer Vision (ECCV)}, -->
 <!--   year      = {2022} -->
 <!-- } -->
-<!--  -->
-<!-- ``` -->
+
+```
