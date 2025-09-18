@@ -127,11 +127,4 @@ python ggi.py --target assets/sampleA/multiviews/spatown_p-e3b0c442_e400_s051106
 
 ```
 Comming Soon
-<!-- @inproceedings{Kim2022BigColor, -->
-<!--   title     = {BigColor: Colorization using a Generative Color Prior for Natural Images}, -->
-<!--   author    = {Geonung Kim,Kyoungkook Kang,Seongtae Kim,Hwayoon Lee,Sehoon Kim,Jonghyun Kim,Seung-Hwan Baek,Sunghyun Cho}, -->
-<!--   booktitle = {European Conference on Computer Vision (ECCV)}, -->
-<!--   year      = {2022} -->
-<!-- } -->
-
 ```
