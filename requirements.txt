@@ -10,6 +10,7 @@ optimum-quanto==0.2.6
 matplotlib
 onnxruntime==1.20.1
 sentencepiece==0.2.0
+datasets==3.3.2
 rp
 peft
 tqdm
