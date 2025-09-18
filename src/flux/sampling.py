@@ -1,6 +1,5 @@
 import math
 from typing import Callable
-from socket import gethostname
 
 import torch
 from einops import rearrange, repeat
@@ -368,10 +367,6 @@ def denoise_controlnet(
 
         img = img + (t_prev - t_curr) * pred
         i += 1
-
-        if gethostname() == "comar-System-Product-Name":
-            from torchvision.transforms import ToPILImage
-            ToPILImage()(self.ae.decode(unpack((img - t_curr * pred)/(1- t_curr), height, width))[0].clamp(-1,1).float() * 0.5 + 0.5).save(f'{i:04d}.png')
 
     return img
 

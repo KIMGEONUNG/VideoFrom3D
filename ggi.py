@@ -2,36 +2,22 @@ from omegaconf import OmegaConf
 import logging
 import argparse
 from typing import Literal, Optional
-from random import sample
 import rp
 from einops import rearrange
 from peft import LoraConfig
 from safetensors.torch import load_file
-from diffusers import AutoencoderKLCogVideoX
-from controlnet_aux import HEDdetector, MidasDetector
 
-import re
 import torch
-from diffusers import (
-    CogVideoXPipeline,
-    CogVideoXDPMScheduler,
-    CogVideoXVideoToVideoPipeline,
-    CogVideoXTransformer3DModel,
-)
-from diffusers.utils import export_to_video, load_image, load_video
+from diffusers.utils import load_image
 import os
 from pathlib import Path
 
 import sys
-import json
 from glob import glob
-import os
 from os.path import join
-from skimage.transform import resize
-from torchvision.transforms import CenterCrop, Resize, ToTensor
+from torchvision.transforms import ToTensor
 import numpy as np
 from PIL import Image
-from accelerate import cpu_offload
 from transformers import Blip2Processor, Blip2ForConditionalGeneration
 
 sys.path.append('.')
@@ -129,14 +115,12 @@ def generate_video(
     config = OmegaConf.load(os.path.join(path_ckpt, 'config.json'))
     pipe.transformer.register_to_config(**config)
 
-    from socket import gethostname
-    if gethostname() != "comar-System-Product-Name":
-        shard_files = glob(os.path.join(path_ckpt, '*.safetensors'))
-        state_dict = {}
-        for shard_file in shard_files:
-            tensors = load_file(shard_file)
-            state_dict.update(tensors)
-        _ = pipe.transformer.load_state_dict(state_dict)
+    shard_files = glob(os.path.join(path_ckpt, '*.safetensors'))
+    state_dict = {}
+    for shard_file in shard_files:
+        tensors = load_file(shard_file)
+        state_dict.update(tensors)
+    _ = pipe.transformer.load_state_dict(state_dict)
     #---------------------------------------------------------------------------------------------#
 
     # If you're using with lora, add this code
@@ -221,10 +205,8 @@ if __name__ == "__main__":
     parser.add_argument("--num_frames", type=int, default=49)
     parser.add_argument("--prompt", type=str, default=None)
     parser.add_argument("--epoch", type=int, default=1350)
-    parser.add_argument("--target",
-                        type=str,
-                        default='assets/sampleZ02/multiviews/T012_spatown3_p-e3b0c442_e400_s020824')
     parser.add_argument("--degradation", type=float, default=0.50)
+    parser.add_argument("--target", type=str, required=True)
     # ------------------------------------------------------------------------------------------ #
 
     args = parser.parse_args()
@@ -284,13 +266,11 @@ if __name__ == "__main__":
             x_end.save(join(Path(args.target), f'masked_end_{i}.png'))
 
         # ------------------------------------------------------------------------------------------ #
-        name = Path(os.path.basename(__file__)).stem
-        name_father = name[:-2] + "00"
-        path_ckpt = f'logs/{name_father}/checkpoint-{args.epoch}/transformer'
+        path_ckpt = f'checkpoints/checkpoint-{args.epoch}/transformer'
 
         args.output_path = join(
             args.target,
-            f"{name}_p{args.prompt.replace(' ', '_')}_d{args.degradation}_e{args.epoch}_n{args.num_inference_steps}",
+            f"d{args.degradation}_e{args.epoch}_n{args.num_inference_steps}",
         )
         os.makedirs(args.output_path, exist_ok=True)
 

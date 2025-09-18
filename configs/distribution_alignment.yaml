@@ -1,0 +1,36 @@
+model_name: "flux-dev"
+data_config:
+  train_batch_size: 1
+  num_workers: 1
+  img_size: 1024
+  img_dir: 
+  random_ratio: true # support multi crop preprocessing
+report_to: tensorboard
+train_batch_size: 1
+output_dir: 
+max_train_steps: 600
+learning_rate: 1e-4
+lr_scheduler: constant
+lr_warmup_steps: 10
+adam_beta1: 0.9
+adam_beta2: 0.999
+adam_weight_decay: 0.01
+adam_epsilon: 1e-8
+max_grad_norm: 1.0
+logging_dir: logs
+mixed_precision: "bf16"
+checkpointing_steps: 100
+checkpoints_total_limit: 21
+tracker_project_name: lora_test
+resume_from_checkpoint: latest
+gradient_accumulation_steps: 1
+rank: 16
+single_blocks: "1,2,3,4"
+double_blocks: null
+disable_sampling: false
+sample_every: 10000 # sample every this many steps
+sample_width: 1024
+sample_height: 1024
+sample_steps: 20
+sample_prompts:
+    - "simple and beautiful house on the grass"

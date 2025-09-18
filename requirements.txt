@@ -1,0 +1,16 @@
+omegaconf==2.3.0
+diffusers==0.32.2
+accelerate==1.2.1
+controlnet-aux==0.0.9
+transformers==4.47.1
+opencv-python
+einops==0.8.0
+optimum==1.24.0
+optimum-quanto==0.2.6
+matplotlib
+onnxruntime==1.20.1
+sentencepiece==0.2.0
+rp
+peft
+tqdm
+plyfile
